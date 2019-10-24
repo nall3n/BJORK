@@ -15,19 +15,20 @@ class Player_bag:
 
         else:
             for item in self.bag:
-                print(item)
+                print(item.name)
             
+
+
     def add_item(self, item):
         self.bag.append(item)
-
    
     def remove_item(self, user_input):
         """Check if userinput is == to a item in the inventory"""
 
         for item in self.bag:
-            if item in user_input:
+            if item.name in user_input:
                 self.bag.remove(item)
-                print("You droped the %s" %item)
+                print("You droped the %s" %item.name)
                 return item
 
         print("Sorry i there is no item with that name in your inventory")
@@ -43,8 +44,9 @@ class Item:
         self.dmg = dmg
         self.space = space
 
-    def get_item_info(self):
-        return self.info
+    def item_info(self):
+        print(self.name)
+        print(self.info)
 
 #______________________________________________________________
 class Room:
@@ -53,7 +55,7 @@ class Room:
     'info'=(str)Info about room
     'exits'=(list)Directions of room exits 'n','s','e','w'
     'con'=(dict){'n': 'roomName'} Specifies the room each exit goes to
-    items=(list)Of items in the room"""
+    items=(List of objects) Of items in the room"""
     def __init__(self, name, info, exits, con, items):
         self.name = name
         self.info = info
@@ -75,14 +77,15 @@ class Room:
         """Prints the rooms info
         and if there is items in the room pint them"""
         print(self.info)
+        # If there are items in the room run .item_info for each item
         if self.items:
             if len(self.items) == 1:
                 print("There is a item in the room")
-                print(self.items[0])
+                self.items[0].item_info()
             else:
                 print("There are a couple of items in the room")
                 for item in self.items:
-                    print(item)
+                    item.item_info()
 
 #--------------------------------------------------------------
     def get_connections(self):
@@ -98,12 +101,19 @@ class Room:
         """Check if userinput is == to a item in the Room"""
 
         for item in self.items:
-            if item in user_input:
+            if item.name in user_input:
                 self.items.remove(item)
-                print("You tok the %s" %item)
+                print("You tok the %s" %item.name)
                 return item
 
         print("Sorry i there is no item with that name in the room")
+
+
+
+
+
+
+
 
 #______________________________________________________________
 class Movment:

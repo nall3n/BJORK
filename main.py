@@ -1,5 +1,5 @@
 from game import *
-from world import world, items
+from world import world#, items
 from inputCheck import InputCheck
 
 
