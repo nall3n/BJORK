@@ -1,0 +1,20 @@
+
+
+
+ADd rooms to a cordinate system like this 
+
+00 10 20 30 40 50
+01 11 21 31 41 51
+02 21 22 32 42 52 
+03 13 23 33 43 53
+04 14 24 34 44 54
+05 15 25 35 45 55
+
+Butt bigger or ass big as needed.
+eche room has valid exits north, south, west, east and so on 
+
+Players location is stored in a two ints x and y 
+
+Rooms can have a enter event that runs first time player enters the room. 
+
+
