@@ -56,7 +56,7 @@ class Room:
     'exits'=(list)Directions of room exits 'n','s','e','w'
     'con'=(dict){'n': 'roomName'} Specifies the room each exit goes to
     items=(List of objects) Of items in the room"""
-    def __init__(self, name, info, exits, con, items):
+    def __init__(self, name: str, info: str, exits: list, con, items: list):
         self.name = name
         self.info = info
         self.exits = exits
