@@ -10,7 +10,7 @@ ADd rooms to a cordinate system like this
 04 14 24 34 44 54
 05 15 25 35 45 55
 
-Butt bigger or ass big as needed.
+Butt bigger or as big as needed.
 eche room has valid exits north, south, west, east and so on 
 
 Players location is stored in a two ints x and y 
@@ -18,3 +18,31 @@ Players location is stored in a two ints x and y
 Rooms can have a enter event that runs first time player enters the room. 
 
 
+Rooms:
+    Kunna gå från ett rum i tillåtna riktningar tex: ett rum kan man bara lämna söder och norr
+    medans ett annat rum bara väster
+
+    titta runt i ett rum och få en beskrivning. 
+
+    Titta på ett föremål i ett rum 
+
+    Kunna ha möbler eller likande i sig som kan ha föremål på/i 
+
+    Plasera/ ta föremål 
+
+Static items: 
+    Inventory slots för att kunna plasera eller ta föremål.
+
+    öppen stängd flagga för till exempel ett skåp 
+
+    låst/olåst flagga. nyckel id för att kunna identifiera vilken nyckel som hör till vad 
+
+    En beskrivning ifall en spelare tittar på möblen 
+    om öppen flaggan är sann ska det liststas vilka föremål som finns i/på 
+
+
+item: 
+    namn och beskrivning 
+    
+    Subbclasser för nycklar och liknade tänker jag mig
+    
