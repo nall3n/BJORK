@@ -46,3 +46,6 @@ item:
     
     Subbclasser för nycklar och liknade tänker jag mig
     
+Map:
+    Kanske en karta hade varit rätt så skoj.
+    Tänker typ att den ska genereras utifrån world listen
