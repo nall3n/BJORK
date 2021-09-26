@@ -31,6 +31,22 @@ class Static_Item():
         for item in self.inventory:
             print (item.name)
 
+    def open(self):
+        if self.is_locked:
+            print('Cant open it\'s locked')
+            return
+        if self.is_open:
+            print(self.name + ' Is already open')
+            return
+        self.is_open = True
+        print(self.name + ' Opend')
+
+    def close(self):
+        if not self.is_open:
+            print (self.name + ' Os already closed')
+            return
+        self.is_open = False
+        print(self.name + ' closed')
 
     def add_item(self, item):
         self.inventory.append(item)

@@ -1,7 +1,22 @@
 from inputCheck import InputCheck
 from world import Room, Item, Static_Item, Key, Player, World_Builder
+import os
 
 
+def clearConsole():
+    command = 'clear'
+    if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
+        command = 'cls'
+    os.system(command)
+
+
+def look():
+    pass
+
+
+
+def open():
+    pass
 
 def main():
     p = '> '
@@ -13,9 +28,9 @@ def main():
     world_build = World_Builder(5,5)
 
     stick = Item('Stick', 'A medium stick')
-    cabinet = Static_Item('Cabinet1',
+    cabinet = Static_Item('Cabinet',
                         'En lite byrå',
-                        True,
+                        False,
                         False,
                         [stick],
                         None
@@ -34,10 +49,13 @@ def main():
 
     run = True
     while run:
+        
+
         current_room = world[player.x][player.y]
         current_room.enter_room()
         
-        user_input = input(p)
+        user_input = input(p)#.lower()
+        clearConsole()
         verb = input_check.check_verb(user_input)
 
 
@@ -46,6 +64,14 @@ def main():
                 current_room.get_info()
             if current_room.static_items.name in user_input:
                 current_room.static_items.look_att()
+
+        if verb == 'open':
+            if current_room.static_items.name in user_input:
+                current_room.static_items.open()
+        
+        if verb == 'close':
+            if current_room.static_items.name in user_input:
+                current_room.static_items.close()
 
 
 if __name__ == '__main__':
